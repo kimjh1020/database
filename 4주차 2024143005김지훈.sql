@@ -125,6 +125,11 @@ SELECT
     REPLACE(substr(전화번호,2),')','-') AS 전화번호2
 FROM 한빛무역.고객;
 
+select *
+,단가 * 주문수량 AS 주문금액
+,truncate(단가 * 주문수량 * 할인율,-1) AS 할인금액
+,단가 * 주문수량 - truncate(단가 * 주문수량 * 할인율 ,-1) AS 실주문금액
+from 한빛무역.주문세부;
 
 SELECT 
     주문번호,
