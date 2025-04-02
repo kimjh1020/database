@@ -109,12 +109,22 @@ when 2500 * 450 > 4000000 THEN '달성'
 ELSE '미달성'
 end;
 
+#문제풀이
+
 SELECT 
     고객회사명,
     CONCAT('**', SUBSTRING(고객회사명, 3, LENGTH(고객회사명) - 2)) AS 고객회사명2,
     전화번호,
     REPLACE(전화번호, '(', '') AS 전화번호2
 FROM 한빛무역.고객;
+
+SELECT 
+    고객회사명,
+    CONCAT('**',Substr(고객회사명,3)) AS 고객회사명2,
+    전화번호,
+    REPLACE(substr(전화번호,2),')','-') AS 전화번호2
+FROM 한빛무역.고객;
+
 
 SELECT 
     주문번호,
